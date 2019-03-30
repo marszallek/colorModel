@@ -1,0 +1,52 @@
+.navbar{
+    background-color: #773454;
+    color: white;
+}
+
+.index-div{
+    border: 1px solid #95ecec8f
+}
+
+.computer-graphic-model{
+    background-color: #95ecec8f;
+    color: #37a0a0;
+}
+
+.dotted{
+    border-bottom: 4px dotted black;
+}
+
+.rgb-cmy-red{
+    background-color: #ffb1b1;
+    color: #e01111;
+}
+
+.rgb-cmy-green{
+    background-color: #96e8a9c4;
+    color: #0f7726;
+}
+
+a{
+    color: white;
+    margin: 0px 1vw;
+}
+
+button{
+    background-color: #773454;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+th, td{
+    background-color: #82bbbb;
+}
+
+footer{
+    text-align: center;
+    background-color: rgb(122, 114, 114);
+    color: white;
+    width: 30%;
+    margin: auto;
+    border-radius: 10px 10px 0px 0px;
+}

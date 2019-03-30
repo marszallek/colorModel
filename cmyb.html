@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="RGB CMYK Color Picker. Choose Your Color.">
+    <meta name="keywords" content="RGB, CMYK, ColorPicker.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="nofollow">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta http-equiv="pragma" content="no-cache">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="./css/style.css">
+    <title>COLOR MODEL</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand ml-5">Color Models</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end mr-5" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./rgb.html">RGB</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link">CMY</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./web-safe-color.html">Web Safe Colors</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <content class="container">
+        <div class="col">
+            <div class="row mx-auto w-75">
+                <div class="col ">
+                    <div class="card">
+                        <h5 class="card-header py-3 rgb-cmy-red">Cyan Magenta Yellow (CMY)</h5>
+                        <div class="card-body">
+                            <p class="card-title">CMYK is an <i>subtractive reflected light color model</i>
+                                where each color is stored in <i>one byte.</i><br>
+                                All possibles combinations of <b>CMYK</b> give
+                                2<sup>32</sup> different colors.</p>
+                            <p class="card-text">Starting with <b>white</b> color, to which
+                                different color <b>inks</b>
+                                are added to <b>absorb (substract)</b> light that is reflected.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <h5 class="card-header py-3 rgb-cmy-green">Cyan Magenta Yellow (CMY)</h5>
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">Select <b>CMY</b> values:</h3>
+                            Red<select type="dropdown"></select>
+                            Green<select type="dropdown"></select>
+                            Blue<select type="dropdown"></select>
+                            <br>
+                            <table class="table mt-3">
+                                <tr>
+                                    <th>RGB Float Values</th>
+                                    <th>RGB Hexidecimal Values</th>
+                                    <th>Display</th>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center my-5">
+                <button type="button">Generate Random Colors</button>
+            </div>
+        </div>
+    </content>
+    <footer>
+        <p>Daniel Marszalek&copy;</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
