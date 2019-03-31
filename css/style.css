@@ -3,11 +3,16 @@
     color: white;
 }
 
-.index-div{
-    border: 1px solid #95ecec8f
+.tall{
+    min-height: 450px;
 }
 
-.computer-graphic-model{
+.index-div{
+    border: 1px solid #95ecec8f;
+}
+
+.computer-graphic-model,
+.place{
     background-color: #95ecec8f;
     color: #37a0a0;
 }
@@ -49,4 +54,20 @@ footer{
     width: 30%;
     margin: auto;
     border-radius: 10px 10px 0px 0px;
+}
+
+.adress:before{
+    content: url(../images/004-home.png);
+}
+
+.phone:before{
+    content: url(../images/002-phone-call.png);
+}
+
+.mail:before{
+    content: url(../images/001-mail.jpg);
+}
+
+.website:before{
+    content: url(../images/003-internet.png);
 }

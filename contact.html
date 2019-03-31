@@ -16,11 +16,11 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-dark navbar-expand-lg">
         <a class="navbar-brand ml-5">Color Models</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <a class="navbar-toggler-icon"></a>
         </button>
         <div class="collapse navbar-collapse justify-content-end mr-5" id="navbarNavDropdown">
             <ul class="navbar-nav">
@@ -44,25 +44,27 @@
     </nav>
 
     <content class="container">
-        <div class="col">
-            <div class="row mx-auto w-75">
-                <div class="col ">
-                    <span class="adress">Adress</span>
+        <div class="col tall w-75 mx-auto">
+            <div class="row mt-4 ml-1">
+                <div class="col">
+                    <a class="adress">Adress</a>
                 </div>
-                <div class="col ">
-                    <span class="adress">Phone</span>
+                <div class="col">
+                    <a class="phone">Phone</a>
                 </div>
-                <div class="col ">
-                    <span class="adress">Mail</span>
+                <div class="col">
+                    <a class="mail">Mail</a>
                 </div>
-                <div class="col ">
-                    <span class="adress">Website</span>
+                <div class="col">
+                    <a class="website">Website</a>
                 </div>
             </div>
-            <div class="row justify-content-end w-75 my-4">
-                <p>Adress of The Company</p>
-                <p>Street number 3123-1231</p>
-                <p>State and City with PostCode</p>
+            <div class="row">
+                <div class="col place text-center mt-5">
+                    <p>Adress of The Company</p>
+                    <p>Street number 3123-1231</p>
+                    <p>State and City with PostCode</p>
+                </div>
             </div>
         </div>
     </content>

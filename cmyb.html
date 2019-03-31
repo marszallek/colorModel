@@ -11,12 +11,14 @@
     <meta http-equiv="pragma" content="no-cache">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer="defer"></script>
+        <script src="./js/app.js" defer="defer"></script>
     <link type="text/css" rel="stylesheet" href="./css/style.css">
     <title>COLOR MODEL</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-dark navbar-expand-lg">
         <a class="navbar-brand ml-5">Color Models</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,8 +45,8 @@
         </div>
     </nav>
 
-    <content class="container">
-        <div class="col">
+    <content class="container" id="app">
+        <div class="col tall">
             <div class="row mx-auto w-75">
                 <div class="col ">
                     <div class="card">
@@ -71,12 +73,10 @@
                             <br>
                             <table class="table mt-3">
                                 <tr>
-                                    <th>RGB Float Values</th>
-                                    <th>RGB Hexidecimal Values</th>
+                                    <th>RGB in Hexidecimal</th>
                                     <th>Display</th>
                                 </tr>
                                 <tr>
-                                    <td></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
