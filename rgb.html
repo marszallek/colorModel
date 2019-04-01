@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer="defer"></script>
-    <script src="./js/app.js" defer="defer"></script>
+    <script src="./js/rgb.js" defer="defer"></script>
     <link type="text/css" rel="stylesheet" href="./css/style.css">
     <title>COLOR MODEL</title>
 </head>
@@ -45,20 +45,20 @@
         </div>
     </nav>
 
-    <content class="container" id="app">
+    <content class="container" id="rgb">
         <div class="col tall">
             <div class="row mx-auto w-75">
                 <div class="col ">
                     <div class="card">
                         <h5 class="card-header py-3 rgb-cmy-red"><span :style="getRedColor">RED</span> <span :style="getGreenColor">Green</span> <span :style="getBlueColor">Blue</span> (<span :style="getRedColor">R</span><span :style="getGreenColor">G</span><span :style="getBlueColor">B</span>)</h5>
                         <div class="card-body">
-                            <p class="card-title"><span :style="getRedColor">R</span><span :style="getGreenColor">G</span><span :style="getBlueColor">B</span> is an <i>additive color projected light color model</i>
+                            <p class="card-title"><span :style="getRedColor">R</span><span :style="getGreenColor">G</span><span :style="getBlueColor">B</span><span :style="fontRGB"> is an <i>additive color projected light color model</i>
                                 where each color is stored in <i>one byte.</i><br>
-                                All possibles combinations of <b><span :style="getRedColor">red</span>, <span :style="getGreenColor">green</span></b> and <b><span :style="getBlueColor">blue</span></b> give
-                                2<sup>24</sup>=16,777,216 different colors</p>
-                            <p class="card-text">Starting with (<b><span :style="getRedColor">Red</span>, <span :style="getGreenColor">Green</span>, <span :style="getBlueColor">Blue</span></b>)=(<b><span :style="getRedColor">0</span>, <span :style="getGreenColor">0</span>, <span :style="getBlueColor">0</span></b>) (black), to which
+                                All possibles combinations of </span><b><span :style="getRedColor">red</span>, <span :style="getGreenColor">green</span></b> and <b><span :style="getBlueColor">blue</span></b> <span :style="fontRGB">give
+                                2<sup>24</sup>=16,777,216 different colors</span></p>
+                            <p class="card-text"><span :style="fontRGB">Starting with</span> (<b><span :style="getRedColor">Red</span>, <span :style="getGreenColor">Green</span>, <span :style="getBlueColor">Blue</span></b>)=(<b><span :style="getRedColor">0</span>, <span :style="getGreenColor">0</span>, <span :style="getBlueColor">0</span></b>) <span :style="fontRGB">(black), to which
                                 different color "lights"
-                                are <i>added</i> to produce visible colors.</p>
+                                are <i>added</i> to produce visible colors.</span></p>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                     <div class="card">
                         <h5 class="card-header py-3 rgb-cmy-green"><span :style="getRedColor">RED</span> <span :style="getGreenColor">Green</span> <span :style="getBlueColor">Blue</span> (<span :style="getRedColor">R</span><span :style="getGreenColor">G</span><span :style="getBlueColor">B</span>)</h5>
                         <div class="card-body">
-                            <h3 class="card-title mb-4">Select <b><span :style="getRedColor">R</span><span :style="getGreenColor">G</span><span><span :style="getBlueColor">B</span></span></b> values:</h3>
+                            <h3 class="card-title mb-4"><span :style="fontRGB">Select</span> <b><span :style="getRedColor">R</span><span :style="getGreenColor">G</span><span><span :style="getBlueColor">B</span></span></b> <span :style="fontRGB">values:</span></h3>
                             <span :style="getRedColor">RED</span>
                             <select type="dropdown" v-model="red">
                                 <option v-for="n in getNumbers(0,256)" :value="n">{{ n }}</option>
@@ -87,7 +87,7 @@
                                 </tr>
                                 <tr>
                                     <td>{{ rgbToHex }}</td>
-                                    <td :style="displayColor"></td>
+                                    <td :style="displayRGB"></td>
                                 </tr>
                             </table>
                         </div>
@@ -100,7 +100,7 @@
         </div>
     </content>
     <footer>
-        <p>Daniel Marszalek&copy;</p>
+        Daniel Marszalek&copy;
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

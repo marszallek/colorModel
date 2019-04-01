@@ -23,12 +23,10 @@
 
 .rgb-cmy-red{
     background-color: #ffb1b1;
-    color: #e01111;
 }
 
 .rgb-cmy-green{
-    background-color: #96e8a9c4;
-    color: #0f7726;
+    background-color: #96e8a9c4;    
 }
 
 a{
@@ -52,7 +50,7 @@ footer{
     background-color: rgb(122, 114, 114);
     color: white;
     width: 30%;
-    margin: auto;
+    margin: 0px auto;
     border-radius: 10px 10px 0px 0px;
 }
 

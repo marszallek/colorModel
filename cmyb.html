@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer="defer"></script>
-        <script src="./js/app.js" defer="defer"></script>
+        <script src="./js/cmy.js" defer="defer"></script>
     <link type="text/css" rel="stylesheet" href="./css/style.css">
     <title>COLOR MODEL</title>
 </head>
@@ -45,16 +45,16 @@
         </div>
     </nav>
 
-    <content class="container" id="app">
+    <content class="container" id="cmyk">
         <div class="col tall">
             <div class="row mx-auto w-75">
                 <div class="col ">
                     <div class="card">
-                        <h5 class="card-header py-3 rgb-cmy-red">Cyan Magenta Yellow (CMY)</h5>
+                        <h5 class="card-header py-3 rgb-cmy-red"><span :style="cyanColor">Cyan</span><span :style="magentaColor">Magenta</span> <span :style="yellowColor">Yellow</span> (<span :style="cyanColor">C</span><span :style="magentaColor">M</span><span :style="yellowColor">Y</span>)</h5>
                         <div class="card-body">
-                            <p class="card-title">CMYK is an <i>subtractive reflected light color model</i>
+                            <p class="card-title"><span :style="cyanColor">C</span> <span :style="magentaColor">M</span><span :style="yellowColor">Y</span>K is an <i>subtractive reflected light color model</i>
                                 where each color is stored in <i>one byte.</i><br>
-                                All possibles combinations of <b>CMYK</b> give
+                                All possibles combinations of <b><span :style="cyanColor">C</span><span :style="magentaColor">M</span><span :style="yellowColor">Y</span>K</b> give
                                 2<sup>32</sup> different colors.</p>
                             <p class="card-text">Starting with <b>white</b> color, to which
                                 different color <b>inks</b>
@@ -64,12 +64,21 @@
                 </div>
                 <div class="col">
                     <div class="card">
-                        <h5 class="card-header py-3 rgb-cmy-green">Cyan Magenta Yellow (CMY)</h5>
+                        <h5 class="card-header py-3 rgb-cmy-green"><span :style="cyanColor">Cyan</span> <span :style="magentaColor">Magenta</span><span :style="yellowColor">Yellow</span> (<span :style="cyanColor">C</span><span :style="magentaColor">M</span><span :style="yellowColor">Y</span>)</h5>
                         <div class="card-body">
-                            <h3 class="card-title mb-4">Select <b>CMY</b> values:</h3>
-                            Red<select type="dropdown"></select>
-                            Green<select type="dropdown"></select>
-                            Blue<select type="dropdown"></select>
+                            <h3 class="card-title mb-4">Select <b><span :style="cyanColor">C</span><span :style="magentaColor">M</span><span :style="yellowColor">Y</span></b> values:</h3>
+                            <span :style="cyanColor">Cyan</span>
+                            <select type="dropdown" v-model="cyan">
+                                <option v-for="n in getNumbers(0, 101)" :value="n">{{ n }}</option>
+                            </select>
+                            <span :style="magentaColor">Magenta</span>
+                            <select type="dropdown" v-model="magenta">
+                                <option v-for="n in getNumbers(0, 101)" :value="n">{{ n }}</option>
+                            </select>
+                            <span :style="yellowColor">Yellow</span>
+                            <select type="dropdown" v-model="yellow">
+                                <option v-for="n in getNumbers(0, 101)" :value="n">{{ n }}</option>
+                            </select>
                             <br>
                             <table class="table mt-3">
                                 <tr>
@@ -77,8 +86,8 @@
                                     <th>Display</th>
                                 </tr>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{{ cmykToHex }}</td>
+                                    <td :style="displayCMYK"></td>
                                 </tr>
                             </table>
                         </div>
@@ -91,7 +100,7 @@
         </div>
     </content>
     <footer>
-        <p>Daniel Marszalek&copy;</p>
+        Daniel Marszalek&copy;
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

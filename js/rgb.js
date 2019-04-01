@@ -1,5 +1,5 @@
-const app = new Vue({
-    el: '#app',
+const rgb = new Vue({
+    el: '#rgb',
     data: {
         red: 150,
         green: 150,
@@ -18,12 +18,17 @@ const app = new Vue({
         },
         getBlueColor: function() {
             return {
-                color: `rgb(0, 0, ${this.blue})`
+                color: `rgb(0, 0, ${this.blue})`,
             }
         },
-        displayColor: function() {
+        displayRGB: function() {
             return {
-                backgroundColor: `rgb(${this.red}, ${this.green}, ${this.blue})`
+                backgroundColor: `rgb(${this.red}, ${this.green}, ${this.blue})`,
+            }
+        },
+        fontRGB: function() {
+            return {
+                color: `rgb(${this.red}, ${this.green}, ${this.blue})`,
             }
         },
         rgbToHex: function() {
