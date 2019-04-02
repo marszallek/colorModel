@@ -94,8 +94,56 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center my-5">
-                <button type="button">Generate Random Colors</button>
+            <div class="row justify-content-center mt-3">
+                <button type="button" @click="changeColors()" @keydown.space="changeColors()">Generate Random Colors</button>
+            </div>
+            <div class="row justify-content-center" v-if="randomButton">
+                <table>
+                    <tr>
+                        <th>Color In Hexidecimal</th>
+                        <th>Display Color</th>
+                    </tr>
+                    <tr>
+                        <th>{{ first }}</th>
+                        <th v-bind:style="{ backgroundColor: first}"></th>
+                    </tr>
+                    <tr>
+                        <th>{{ second }}</th>
+                        <th v-bind:style="{ backgroundColor: second}"></th>
+                    </tr>
+                    <tr>
+                        <th>{{ third }}</th>
+                        <th v-bind:style="{ backgroundColor: third}"></th>
+                    </tr>
+                    <tr>
+                        <th>{{ fourth }}</th>
+                        <th v-bind:style="{ backgroundColor: fourth}"></th>
+                    </tr>
+                    <tr>
+                        <th>{{ fifth }}</th>
+                        <th v-bind:style="{ backgroundColor: fifth}"></th>
+                    </tr>
+                    <tr>
+                        <th>{{ sixth }}</th>
+                        <th v-bind:style="{ backgroundColor: sixth}"></th>
+                    </tr>
+                    <tr>
+                        <th>{{ seventh }}</th>
+                        <th v-bind:style="{ backgroundColor: seventh}"></th>
+                    </tr>
+                    <tr>
+                        <th>{{ eighth }}</th>
+                        <th v-bind:style="{ backgroundColor: eighth}"></th>
+                        </tr>
+                    <tr>
+                        <th>{{ ninth }}</th>
+                        <th v-bind:style="{ backgroundColor: ninth}"></th>
+                    </tr>
+                    <tr>
+                        <th>{{ tenth }}</th>
+                        <th v-bind:style="{ backgroundColor: tenth}"></th>
+                    </tr>
+                </table>
             </div>
         </div>
     </content>
