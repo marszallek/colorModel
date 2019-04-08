@@ -6,16 +6,11 @@ for(let i=0; i<30; i++){
 const rgb = new Vue({
     el: '#rgb',
     data: {
-        red: 150,
-        green: 150,
-        blue: 150,
+        red: 200,
+        green: 0,
+        blue: 200,
         objectOf33Colors,
-        randomButton: false,
-        setOfColors: {
-            randomColors() {
-                return Math.round(Math.random() * 255)
-            }
-        },
+        randomButton: false
     },
     computed: {
         first: function () {
@@ -78,9 +73,6 @@ const rgb = new Vue({
         },
     },
     methods: {
-        getNumbers: function (start, stop) {
-            return new Array(stop - start).fill(start).map((n, i) => n + i);
-        },
         changeColors: function() {
             this.randomButton = true;
             this.objectOf33Colors = [];

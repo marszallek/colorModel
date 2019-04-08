@@ -9,8 +9,7 @@
     <meta name="robots" content="nofollow">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta http-equiv="pragma" content="no-cache">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="./css/style.css">
     <title>COLOR MODEL</title>
 </head>
@@ -44,42 +43,42 @@
     </nav>
 
     <content class="container">
-        <div class="col tall w-75 mx-auto">
-            <div class="row mt-4 ml-1">
-                <div class="col">
-                    <a class="adress">Adress</a>
-                </div>
-                <div class="col">
-                    <a class="phone">Phone</a>
-                </div>
-                <div class="col">
-                    <a class="mail">Mail</a>
-                </div>
-                <div class="col">
-                    <a class="website">Website</a>
-                </div>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active adress" id="adress-tab" data-toggle="tab" href="#adress" role="tab" aria-controls="home"
+                    aria-selected="true">Adress</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link phone" id="phone-tab" data-toggle="tab" href="#phone" role="tab"
+                    aria-controls="profile" aria-selected="false">Phone</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mail" id="mail-tab" data-toggle="tab" href="#mail" role="tab"
+                    aria-controls="contact" aria-selected="false">Mail</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link website" id="website-tab" data-toggle="tab" href="#website" role="tab"
+                    aria-controls="contact" aria-selected="false">Website</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="adress" role="tabpanel" aria-labelledby="adress-tab">
+                <p>Adress of The Company<br>
+                Street number 3123-1231<br>
+                State and City with PostCode</p>
             </div>
-            <div class="row">
-                <div class="col place text-center mt-5">
-                    <p>Adress of The Company</p>
-                    <p>Street number 3123-1231</p>
-                    <p>State and City with PostCode</p>
-                </div>
-            </div>
-        </div>
+            <div class="tab-pane fade" id="phone" role="tabpanel" aria-labelledby="phone-tab"><a class="reference" href="tel:+48660771501">+48 660 771 501</a></div>
+            <div class="tab-pane fade" id="mail" role="tabpanel" aria-labelledby="mail-tab"><a class="reference" href="mailto:marszallek@vp.pl?Subject=Hello%20again" target="_top">marszallek@vp.pl</a></div>
+            <div class="tab-pane fade" id="website" role="tabpanel" aria-labelledby="website-tab"> <a class="reference" href="https://github.com/marszallek?tab=repositories">GITHUB</a></div>
     </content>
+
     <footer>
         Daniel Marszalek&copy;
     </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>

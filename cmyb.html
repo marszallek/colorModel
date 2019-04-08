@@ -9,10 +9,9 @@
     <meta name="robots" content="nofollow">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta http-equiv="pragma" content="no-cache">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer="defer"></script>
-        <script src="./js/cmy.js" defer="defer"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer="defer"></script>
+    <script src="./js/cmy.js" defer="defer"></script>
     <link type="text/css" rel="stylesheet" href="./css/style.css">
     <title>COLOR MODEL</title>
 </head>
@@ -52,13 +51,13 @@
                     <div class="card">
                         <h5 class="card-header py-3 rgb-cmy-red"><span :style="cyanColor">Cyan</span><span :style="magentaColor">Magenta</span> <span :style="yellowColor">Yellow</span> (<span :style="cyanColor">C</span><span :style="magentaColor">M</span><span :style="yellowColor">Y</span>)</h5>
                         <div class="card-body">
-                            <p class="card-title"><span :style="cyanColor">C</span> <span :style="magentaColor">M</span><span :style="yellowColor">Y</span>K is an <i>subtractive reflected light color model</i>
+                            <p class="card-title"><span :style="cyanColor">C</span> <span :style="magentaColor">M</span><span :style="yellowColor">Y</span>K <span :style="fontCMYK">is an <i>subtractive reflected light color model</i>
                                 where each color is stored in <i>one byte.</i><br>
-                                All possibles combinations of <b><span :style="cyanColor">C</span><span :style="magentaColor">M</span><span :style="yellowColor">Y</span>K</b> give
-                                2<sup>32</sup> different colors.</p>
-                            <p class="card-text">Starting with <b>white</b> color, to which
+                                All possibles combinations of</span> <b><span :style="cyanColor">C</span><span :style="magentaColor">M</span><span :style="yellowColor">Y</span>K</b> <span :style="fontCMYK"> give
+                                2<sup>32</sup> different colors.</span></p>
+                            <p class="card-text"><span :style="fontCMYK">Starting with <b>white</b> color, to which
                                 different color <b>inks</b>
-                                are added to <b>absorb (substract)</b> light that is reflected.</p>
+                                are added to <b>absorb (substract)</b> light that is reflected.</span></p>
                         </div>
                     </div>
                 </div>
@@ -66,19 +65,13 @@
                     <div class="card">
                         <h5 class="card-header py-3 rgb-cmy-green"><span :style="cyanColor">Cyan</span> <span :style="magentaColor">Magenta</span><span :style="yellowColor">Yellow</span> (<span :style="cyanColor">C</span><span :style="magentaColor">M</span><span :style="yellowColor">Y</span>)</h5>
                         <div class="card-body">
-                            <h3 class="card-title mb-4">Select <b><span :style="cyanColor">C</span><span :style="magentaColor">M</span><span :style="yellowColor">Y</span></b> values:</h3>
-                            <span :style="cyanColor">Cyan</span>
-                            <select type="dropdown" v-model="cyan">
-                                <option v-for="n in getNumbers(0, 101)" :value="n">{{ n }}</option>
-                            </select>
-                            <span :style="magentaColor">Magenta</span>
-                            <select type="dropdown" v-model="magenta">
-                                <option v-for="n in getNumbers(0, 101)" :value="n">{{ n }}</option>
-                            </select>
-                            <span :style="yellowColor">Yellow</span>
-                            <select type="dropdown" v-model="yellow">
-                                <option v-for="n in getNumbers(0, 101)" :value="n">{{ n }}</option>
-                            </select>
+                            <h3 class="card-title mb-4"><span :style="fontCMYK">Select </span><b><span :style="cyanColor">C</span><span :style="magentaColor">M</span><span :style="yellowColor">Y</span></b> <span :style="fontCMYK">values:</span></h3>
+                            <span :style="cyanColor">Cyan</span><br>
+                                <input type="range" min="0" max="100" v-model.number="cyan">{{ cyan }}<br>
+                            <span :style="magentaColor">Magenta</span><br>
+                                <input type="range" min="0" max="100" v-model.number="magenta">{{ magenta }}<br>
+                            <span :style="yellowColor">Yellow</span><br>
+                                <input type="range" min="0" max="100" v-model.number="yellow">{{ yellow }}<br>
                             <br>
                             <table class="table mt-3">
                                 <tr>
@@ -95,22 +88,64 @@
                 </div>
             </div>
             <div class="row justify-content-center mt-3">
-                <button type="button">Generate Random Colors</button>
+                <button type="button" @click="changeColors()" @keydown.space="changeColors()">Generate Random Colors</button>
+            </div>
+            <div class="row justify-content-center" v-if="randomButton">
+                <table>
+                    <tr>
+                        <th>Color In Hexidecimal</th>
+                        <th>Display Color</th>
+                    </tr>
+                    <tr>
+                        <th>{{ first }}</th>
+                        <th v-bind:style="{ backgroundColor: first}"></th>
+                    </tr>
+                    <tr>
+                        <th>{{ second }}</th>
+                        <th v-bind:style="{ backgroundColor: second}"></th>
+                    </tr>
+                    <tr>
+                        <th>{{ third }}</th>
+                        <th v-bind:style="{ backgroundColor: third}"></th>
+                    </tr>
+                    <tr>
+                        <th>{{ fourth }}</th>
+                        <th v-bind:style="{ backgroundColor: fourth}"></th>
+                    </tr>
+                    <tr>
+                        <th>{{ fifth }}</th>
+                        <th v-bind:style="{ backgroundColor: fifth}"></th>
+                    </tr>
+                    <tr>
+                        <th>{{ sixth }}</th>
+                        <th v-bind:style="{ backgroundColor: sixth}"></th>
+                    </tr>
+                    <tr>
+                        <th>{{ seventh }}</th>
+                        <th v-bind:style="{ backgroundColor: seventh}"></th>
+                    </tr>
+                    <tr>
+                        <th>{{ eighth }}</th>
+                        <th v-bind:style="{ backgroundColor: eighth}"></th>
+                        </tr>
+                    <tr>
+                        <th>{{ ninth }}</th>
+                        <th v-bind:style="{ backgroundColor: ninth}"></th>
+                    </tr>
+                    <tr>
+                        <th>{{ tenth }}</th>
+                        <th v-bind:style="{ backgroundColor: tenth}"></th>
+                    </tr>
+                </table>
             </div>
         </div>
     </content>
     <footer>
         Daniel Marszalek&copy;
     </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>

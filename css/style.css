@@ -33,6 +33,9 @@ a{
     color: white;
     margin: 0px 1vw;
 }
+input{
+    margin-left: 4vw;
+}
 
 button{
     background-color: #773454;
@@ -64,4 +67,26 @@ footer{
 
 .website:before{
     content: url(../images/003-internet.png);
+}
+
+.nav-link{
+    color: black;
+}
+
+.tab-pane{
+    background-color: #c3f4f4;
+    text-align: center;
+    min-height: 140px;
+    margin-bottom: 12px;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 50px;
+}
+
+.table th, .table td {
+    padding: 0;
+}
+
+.reference{
+    color: black;
 }
